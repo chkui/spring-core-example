@@ -103,7 +103,7 @@ class BeanWrapper {
 
 //-----------------------------------------------------------------------------------------------
 //执行
-public class IocExtensionSampleNoPluging {
+public class IocExtensionSample {
     public static void main(String[] args) {
     	List<Class<?>> classes = Arrays.asList(new Class<?>[]{MyBean1.class, MyBean2.class});
     	List<Object> ins = new BeanFactory().createBeans(classes);

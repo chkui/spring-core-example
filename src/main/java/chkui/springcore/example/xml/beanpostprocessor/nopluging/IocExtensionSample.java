@@ -1,4 +1,4 @@
-package chkui.springcore.example.xml.beanpostprocessor.extend;
+package chkui.springcore.example.xml.beanpostprocessor.nopluging;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,17 +16,19 @@ class BeanFactory {
 	//创建一个Bean
 	Object createBean(Class<?> cls){
 		//执行一些复杂的初始化管理工作
-		Object ins = null;
+		BeanWrapper wrapper = null;
 		try {
-			ins = new BeanWrapper(cls.newInstance());
+			Object ins = cls.newInstance();
+			//添加到容器
+			wrapper = new BeanWrapper(ins);
 		} catch (InstantiationException | IllegalAccessException e) {
 		}
 		//完成了Bean的创建，
-		return ins;
+		return wrapper;
 	}
 }
 
-//一个包装类
+//包装类
 class BeanWrapper {
 	private Object bean;
 	public BeanWrapper(Object bean) {
@@ -40,7 +42,7 @@ class BeanWrapper {
 
 
 //执行
-public class IocExtensionSampleExtends {
+public class IocExtensionSample {
     public static void main(String[] args) {
     	List<Class<?>> classes = Arrays.asList(new Class<?>[]{MyBean1.class, MyBean2.class});
     	List<Object> ins = new ModifyBeanFactory().createBeans(classes);
