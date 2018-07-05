@@ -13,4 +13,6 @@
     <bean id="userService" class="chkui.springcore.example.xml.service.impl.UserServiceImpl">
     	<constructor-arg ref="user"/>
     </bean>
+    
+    <bean class="chkui.springcore.example.xml.beanpostprocessor.Processor"/>
 </beans>
