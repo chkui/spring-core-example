@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer"> 
+        	<property name="locations" value="classpath:xml/configoverride/config.properties"/>
+        </bean>
+    <bean id="user" class="chkui.springcore.example.xml.configoverride.User" />
+    <bean id="cpu" class="chkui.springcore.example.xml.configoverride.entity.Cpu" />
+    <bean id="ram" class="chkui.springcore.example.xml.configoverride.entity.Ram" />
+    <bean id="graphics" class="chkui.springcore.example.xml.configoverride.entity.Graphics" />
+    <bean id="pc" class="chkui.springcore.example.xml.configoverride.entity.Pc">
+        <property name="cpu" ref="cpu"/>
+        <property name="ram" ref="ram"/>
+        <property name="graphics" ref="graphics"/>
+    </bean>
+</beans>

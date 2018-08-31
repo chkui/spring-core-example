@@ -32,6 +32,9 @@ dependencies {
 	compile group: spring.group, name: 'spring-core', version: spring.version
 	compile group: spring.group, name: 'spring-beans', version: spring.version
 	compile group: spring.group, name: 'spring-context', version: spring.version
+	compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
+	compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.0.12.Final'
+	compile group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b09'
     testCompile 'junit:junit:4.12'
 }
 

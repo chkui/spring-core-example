@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="chkui.springcore.example.xml.beanfactorypostprocessor.bean.Cpu">
+     	<property name="brand" value="Amd"/>
+    </bean>
+    
+    <bean class="chkui.springcore.example.xml.beanfactorypostprocessor.bean.Graphics">
+     	<property name="brand" value="Nvdia"/>
+    </bean>
+    
+    <bean class="chkui.springcore.example.xml.beanfactorypostprocessor.bean.Ram">
+     	<property name="brand" value="Kingston"/>
+    </bean>
+    
+    <bean class="chkui.springcore.example.xml.beanfactorypostprocessor.PostProcessor" />
+    
+    <bean class="chkui.springcore.example.xml.beanfactorypostprocessor.PostProcessors" />
+</beans>

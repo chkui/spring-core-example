@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- Base64编码 -->
+    <bean class="chkui.springcore.example.xml.factorybean.entity.Base64Entity">
+     	<constructor-arg value="一串加密的文字。URLBase64和Base64的区别是调整了可以用于URL的符号，例如+替换为-。"/>
+    </bean>
+    <!-- UrlBase64编码 -->
+    <!-- <bean class="chkui.springcore.example.xml.factorybean.entity.UrlBase64Entity">
+     	<constructor-arg value="一串加密的文字。URLBase64和Base64的区别是调整了可以用于URL的符号，例如+替换为-。"/>
+    </bean> -->
+    
+    <bean id="adapter" class="chkui.springcore.example.xml.factorybean.AdapterFactory" />
+</beans>
